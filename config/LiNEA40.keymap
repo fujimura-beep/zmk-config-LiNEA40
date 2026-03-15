@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -104,16 +104,42 @@
         all {
             bindings = <&kp LG(A)>;
             key-positions = <10 11>;
+            layers = <0>;
         };
 
         copy {
             bindings = <&kp LG(C)>;
             key-positions = <11 22>;
+            layers = <0>;
         };
 
         paste {
             bindings = <&kp LG(V)>;
             key-positions = <11 23>;
+            layers = <0>;
+        };
+
+        allwin {
+            bindings = <&kp LC(A)>;
+            key-positions = <10 11>;
+            layers = <2>;
+        };
+
+        copywin {
+            bindings = <&kp LC(C)>;
+            key-positions = <11 22>;
+            layers = <2>;
+        };
+
+        pastewin {
+            bindings = <&kp LC(V)>;
+            key-positions = <11 23>;
+            layers = <2>;
+        };
+
+        muhenkan {
+            bindings = <&kp LANGUAGE_3>;
+            key-positions = <1 2>;
         };
     };
 
@@ -133,15 +159,33 @@
         };
     };
 
+    macros {
+        mac: mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0>, <&macro_wait_time 200>, <&to 0>;
+
+            label = "MAC";
+        };
+
+        win: win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 2>, <&macro_wait_time 200>, <&to 2>;
+
+            label = "WIN";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        mac_layer {
+        mac {
             bindings = <
 &kp Q                 &kp W         &kp E          &kp R    &kp T                                      &kp Y            &kp U  &kp I       &kp O     &kp P
 &kp A                 &kp S         &kp D          &kp F    &kp G                                      &kp H            &kp J  &kp K       &kp L     &kp SLASH
 &kp Z                 &kp X         &kp C          &kp V    &kp B                                      &kp N            &kp M  &kp COMMA   &kp DOT   &kp SEMICOLON
-&mt LEFT_COMMAND ESC  &kp LEFT_ALT  &kp LC(SPACE)  &kp INS  &lt 5 ENTER  &lt 2 TAB    &lt 2 BACKSPACE  &mt RSHFT SPACE         &lt 6 LBKT  &kp RBKT  &kp SINGLE_QUOTE
+&mt LEFT_COMMAND ESC  &kp LEFT_ALT  &kp LC(SPACE)  &kp INS  &lt 6 ENTER  &lt 3 TAB    &lt 3 BACKSPACE  &mt RSHFT SPACE         &lt 7 LBKT  &kp RBKT  &kp SINGLE_QUOTE
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -153,6 +197,15 @@
 &trans  &trans  &trans  &trans  &trans                    &trans  &mkp MB1  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans            &trans  &trans  &trans
+            >;
+        };
+
+        Win {
+            bindings = <
+&trans                   &trans        &trans       &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans                   &trans        &trans       &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans                   &trans        &trans       &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&mt LEFT_CONTROL ESCAPE  &kp LEFT_ALT  &mt F16 F15  &trans  &trans  &trans    &trans  &trans          &trans  &trans  &trans
             >;
         };
 
