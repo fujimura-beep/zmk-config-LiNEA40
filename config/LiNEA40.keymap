@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,
+            //スクロール方向を逆転,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -123,13 +123,22 @@
 
         mac_layer {
             bindings = <
-&kp Q                 &kp W         &kp E                   &kp R        &kp T                                      &kp Y            &kp U  &kp I      &kp O     &kp P
-&mt LG(A) A           &kp S         &kp D                   &kp F        &kp G                                      &kp H            &kp J  &kp K      &kp L     &kp SLASH
-&kp Z                 &kp X         &mt LG(C) C             &mt LG(V) V  &kp B                                      &kp N            &kp M  &kp COMMA  &kp DOT   &kp RIGHT_SHIFT
-&mt LEFT_COMMAND ESC  &kp LEFT_ALT  &mt LEFT_ALT LC(SPACE)  &kp INS      &lt 5 ENTER  &lt 1 TAB    &lt 1 BACKSPACE  &mt RSHFT SPACE         &kp LBKT   &kp RBKT  &kp SINGLE_QUOTE
+&kp Q                 &kp W         &kp E                   &kp R        &kp T                                      &kp Y            &kp U  &kp I       &kp O     &kp P
+&mt LG(A) A           &kp S         &kp D                   &kp F        &kp G                                      &kp H            &kp J  &kp K       &kp L     &kp SLASH
+&kp Z                 &kp X         &mt LG(C) C             &mt LG(V) V  &kp B                                      &kp N            &kp M  &kp COMMA   &kp DOT   &kp RIGHT_SHIFT
+&mt LEFT_COMMAND ESC  &kp LEFT_ALT  &mt LEFT_ALT LC(SPACE)  &kp INS      &lt 5 ENTER  &lt 2 TAB    &lt 2 BACKSPACE  &mt RSHFT SPACE         &lt 6 LBKT  &kp RBKT  &kp SINGLE_QUOTE
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
+        };
+
+        MOUSE {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &mkp MB1  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans            &trans  &trans  &trans
+            >;
         };
 
         MARK {
@@ -141,15 +150,6 @@
             >;
 
             sensor-bindings = <&re_kp C_VOLUME_DOWN C_VOLUME_UP>;
-        };
-
-        MOUSE {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &mkp MB1  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans            &trans  &trans  &trans
-            >;
         };
 
         CURSOR {
