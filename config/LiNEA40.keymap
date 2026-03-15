@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,
+            //スクロール方向を逆転,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -72,7 +72,7 @@
         };
 
         DeleteKey {
-            bindings = <&kp DEL>;
+            bindings = <&kp BACKSPACE>;
             key-positions = <7 8>;
         };
 
@@ -100,6 +100,21 @@
             bindings = <&mkp MB5>;
             key-positions = <26 27>;
         };
+
+        all {
+            bindings = <&kp LG(A)>;
+            key-positions = <10 11>;
+        };
+
+        copy {
+            bindings = <&kp LG(C)>;
+            key-positions = <11 22>;
+        };
+
+        paste {
+            bindings = <&kp LG(V)>;
+            key-positions = <11 23>;
+        };
     };
 
     behaviors {
@@ -123,10 +138,10 @@
 
         mac_layer {
             bindings = <
-&kp Q                 &kp W         &kp E                   &kp R        &kp T                                      &kp Y            &kp U  &kp I       &kp O     &kp P
-&mt LG(A) A           &kp S         &kp D                   &kp F        &kp G                                      &kp H            &kp J  &kp K       &kp L     &kp SLASH
-&kp Z                 &kp X         &mt LG(C) C             &mt LG(V) V  &kp B                                      &kp N            &kp M  &kp COMMA   &kp DOT   &kp RIGHT_SHIFT
-&mt LEFT_COMMAND ESC  &kp LEFT_ALT  &mt LEFT_ALT LC(SPACE)  &kp INS      &lt 5 ENTER  &lt 2 TAB    &lt 2 BACKSPACE  &mt RSHFT SPACE         &lt 6 LBKT  &kp RBKT  &kp SINGLE_QUOTE
+&kp Q                 &kp W         &kp E          &kp R    &kp T                                      &kp Y            &kp U  &kp I       &kp O     &kp P
+&kp A                 &kp S         &kp D          &kp F    &kp G                                      &kp H            &kp J  &kp K       &kp L     &kp SLASH
+&kp Z                 &kp X         &kp C          &kp V    &kp B                                      &kp N            &kp M  &kp COMMA   &kp DOT   &kp SEMICOLON
+&mt LEFT_COMMAND ESC  &kp LEFT_ALT  &kp LG(SPACE)  &kp INS  &lt 5 ENTER  &lt 2 TAB    &lt 2 BACKSPACE  &mt RSHFT SPACE         &lt 6 LBKT  &kp RBKT  &kp SINGLE_QUOTE
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -192,15 +207,6 @@
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
-        };
-
-        layer_7 {
-            bindings = <
-&trans    &trans     &trans    &trans     &trans                              &trans     &trans     &trans     &trans     &kp GLOBE
-&trans    &trans     &trans    &trans     &kp LEFT_CONTROL                    &trans     &kp RGUI   &kp RALT   &kp RSHFT  &kp FSLH
-&kp CAPS  &kp LGUI   &kp LALT  &kp LSHFT  &kp A                               &trans     &kp SPACE  &kp COMMA  &kp DOT    &kp SEMI
-&kp LGUI  &kp MINUS  &kp LALT  &trans     &trans            &trans    &trans  &kp ENTER             &kp LBKT   &kp RBKT   &kp APOS
-            >;
         };
     };
 };
