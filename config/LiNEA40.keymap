@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -175,6 +175,14 @@
 
             label = "WIN";
         };
+
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 3>, <&macro_wait_time 200>, <&to 2>;
+
+            label = "NEW_MACRO";
+        };
     };
 
     keymap {
@@ -202,10 +210,10 @@
 
         Win {
             bindings = <
-&trans                   &trans        &trans       &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans                   &trans        &trans       &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans                   &trans        &trans       &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&mt LEFT_CONTROL ESCAPE  &kp LEFT_ALT  &mt F16 F15  &trans  &trans  &trans    &trans  &trans          &trans  &trans  &trans
+&trans                   &trans        &trans        &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans                   &trans        &kp A         &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans                   &trans        &trans        &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&mt LEFT_CONTROL ESCAPE  &kp LEFT_ALT  &kp LEFT_GUI  &trans  &trans  &trans    &trans  &trans          &trans  &trans  &trans
             >;
         };
 
