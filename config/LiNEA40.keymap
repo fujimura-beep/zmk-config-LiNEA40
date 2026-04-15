@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -151,8 +151,8 @@
             bindings = <
 &kp Q                 &kp W         &kp E             &kp R    &kp T                                         &kp Y                 &kp U  &kp I       &kp O     &kp P
 &kp A                 &kp S         &kp D             &kp F    &kp G                                         &kp H                 &kp J  &kp K       &kp L     &kp MINUS
-&kp Z                 &kp X         &kp C             &kp V    &kp B                                         &kp N                 &kp M  &kp COMMA   &kp DOT   &mt RSHFT SLASH
-&mt LEFT_COMMAND ESC  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp INS  &lt 6 LANGUAGE_2  &lt 4 SPACE    &lt 5 ENTER  &mt RSHFT LANGUAGE_1         &lt 7 LBKT  &kp RBKT  &kp SINGLE_QUOTE
+&mt LEFT_SHIFT Z      &kp X         &kp C             &kp V    &kp B                                         &kp N                 &kp M  &kp COMMA   &kp DOT   &mt RSHFT SLASH
+&mt LEFT_COMMAND ESC  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp INS  &lt 8 LANGUAGE_2  &lt 6 SPACE    &lt 7 ENTER  &mt RSHFT LANGUAGE_1         &lt 9 LBKT  &kp RBKT  &kp SINGLE_QUOTE
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -163,7 +163,7 @@
 &trans                   &trans        &trans        &trans  &trans                        &trans           &trans  &trans  &trans  &trans
 &trans                   &trans        &trans        &trans  &trans                        &trans           &trans  &trans  &trans  &trans
 &trans                   &trans        &trans        &trans  &trans                        &trans           &trans  &trans  &trans  &trans
-&mt LEFT_CONTROL ESCAPE  &kp LEFT_ALT  &kp LEFT_GUI  &trans  &lt 6 INT5  &trans    &trans  &mt LSHIFT INT4          &trans  &trans  &trans
+&mt LEFT_CONTROL ESCAPE  &kp LEFT_ALT  &kp LEFT_GUI  &trans  &lt 8 INT5  &trans    &trans  &mt LSHIFT INT4          &trans  &trans  &trans
             >;
         };
 
@@ -185,7 +185,25 @@
             >;
         };
 
-        MARK {
+        layer_8 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &trans  &trans  &trans
+            >;
+        };
+
+        layer_9 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &trans  &trans  &trans
+            >;
+        };
+
+        WIN_MARK {
             bindings = <
 &kp EXCLAMATION             &kp AT           &kp HASH         &kp DOLLAR     &kp PERCENT                      &kp CARET     &kp AMPERSAND  &kp ASTERISK           &kp LEFT_PARENTHESIS  &kp LBKT
 &kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp SEMICOLON  &kp SEMICOLON                    &kp C_MUTE    &kp LS(LBKT)   &kp RIGHT_BRACKET      &kp BACKSLASH         &kp EQUAL
@@ -196,7 +214,7 @@
             sensor-bindings = <&re_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
-        FUNCTION {
+        WIN_FUNCTION {
             bindings = <
 &kp F1  &kp F2  &kp F3  &kp F4   &kp F5                     &trans      &trans  &kp LA(PRINTSCREEN)  &trans  &kp LC(LA(DELETE))
 &kp F6  &kp F7  &kp F8  &kp F9   &kp F10                    &trans      &trans  &kp LS(LG(S))        &trans  &kp LC(LS(ESCAPE))
@@ -207,7 +225,7 @@
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
         };
 
-        SCROLL {
+        WIN_SCROLL {
             bindings = <
 &trans    &kp LC(LG(LEFT_ARROW))  &kp UP_ARROW  &kp LC(LG(RIGHT_ARROW))  &trans                            &kp KP_MULTIPLY  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_PLUS
 &trans    &kp LEFT_ARROW          &kp DOWN      &kp RIGHT_ARROW          &kp DEL                           &kp KP_SLASH     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp KP_MINUS
