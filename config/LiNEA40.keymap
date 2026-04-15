@@ -51,14 +51,14 @@
 
 &msc_input_listener {
     speed_up {
-        layers = <FUNCTION>;
+        layers = <MAC_FUNCTION WIN_FUNCTION>;
         input-processors = <&zip_wheel_scaler 3 1>; //スクロールを3倍速にする
     };
 };
 
 &trackball_listener {
     scroller {
-        layers = <SCROLL>;
+        layers = <MAC_SCROLL WIN_SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
             //スクロール方向を逆転,,,,,,,,,,,,,,,,,
