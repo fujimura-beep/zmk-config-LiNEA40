@@ -176,7 +176,7 @@
             >;
         };
 
-        WIN_MARK {
+        MAC_MARK {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
@@ -185,7 +185,7 @@
             >;
         };
 
-        WIN_FUNCTION {
+        MAC_FUNCTION {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
@@ -194,7 +194,7 @@
             >;
         };
 
-        WIN_SCROLL {
+        MAC_SCROLL {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
